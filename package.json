@@ -1,0 +1,40 @@
+{
+  "name": "colorful-notes-dsh",
+  "version": "0.53.0",
+  "type": "module",
+  "description": "Colorful sticky notes for the DeepSeek Harness sidebar, with daily, weekly, monthly and one-time reminders.",
+  "author": "chenruoke",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RockChen87/colorful-notes-dsh.git"
+  },
+  "homepage": "https://github.com/RockChen87/colorful-notes-dsh#readme",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "notes",
+    "reminders"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-sidebar"]
+    }
+  }
+}
